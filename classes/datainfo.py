@@ -1,29 +1,29 @@
-from typing import Dict, Optional
+from typing import Optional
+
 from pydantic import BaseModel
 
 from classes.adressinfo import AdressInfo
 from classes.contactsinfo import ContactsInfo
+from classes.coordinatesinfo import CoordinatesInfo
 from classes.salaryinfo import SalaryInfo
 from classes.scheduleinfo import ScheduleInfo
 
 
-
 class DataInfo(BaseModel):
-    address: AdressInfo
-    # allow_messages: Optional[bool]
-    # billing_type: Optional[str] = "packageOrSingle"
-    # business_area: Optional[int] = 1
-    # contacts: dict[ContactsInfo]
-    # coordinates: dict
-    # description: str
-    # experience: dict
-    # html_tags: bool
-    # image_url: str
-    # employment: str
-    # name: str
-    # salary: SalaryInfo
-    # schedule: ScheduleInfo
-
+    address: dict[AdressInfo]
+    allow_messages: Optional[bool] = None
+    billing_type: Optional[str] = "packageOrSingle"
+    business_area: Optional[int] = 1
+    contacts: dict[ContactsInfo]
+    coordinates: Optional[dict[CoordinatesInfo]]
+    description: str
+    experience: Optional[str]
+    html_tags: Optional[bool]
+    image_url: Optional[str]
+    employment: str
+    name: str
+    salary: dict[SalaryInfo]
+    schedule: Optional[ScheduleInfo]
 
     # def validate(cls: type['Data'], value: any) -> 'Data':
     #     for name, field in Data.__fields__.items():
