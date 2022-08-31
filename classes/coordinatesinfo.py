@@ -1,6 +1,8 @@
+from typing import Optional
+
 from pydantic import BaseModel
 
 
 class CoordinatesInfo(BaseModel):
-    latitude: float
-    longitude: float
+    latitude: Optional[str]
+    longitude: Optional[str]

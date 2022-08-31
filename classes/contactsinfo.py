@@ -8,8 +8,8 @@ from classes.phoneinfo import PhoneInfo
 
 class ContactsInfo(BaseModel):
     email: Optional[str]
-    fullName: str = Field(alias='name')
-    phone: Optional[dict[PhoneInfo]]
+    fullName: str
+    phone: Optional[PhoneInfo] = Field(alias='number')
 
     class Config:
         allow_population_by_field_name = True
