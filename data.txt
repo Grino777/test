@@ -6,6 +6,7 @@
 навыков под руководством опытного наставника.</li><li>Написание
 автотестов</li></ul>",
 "employment": "fullDay",
+"allow_messages" : true,
 "address": {
 "region": "Кировская",
 "city": "Киров",
