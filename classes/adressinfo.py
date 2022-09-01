@@ -1,15 +1,7 @@
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 
 
 class AdressInfo(BaseModel):
-    region: str
-    city: str
-    street_type: Optional[str]
-    street: Optional[str]
-    house_type: Optional[str]
-    house: Optional[str]
-    value: str
-    lat: float
-    lng: float
+    value: Optional[str]

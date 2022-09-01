@@ -1,7 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel, Field
-
+from pydantic import BaseModel, Field, validator, ValidationError
 
 from classes.phoneinfo import PhoneInfo
 
@@ -9,7 +8,15 @@ from classes.phoneinfo import PhoneInfo
 class ContactsInfo(BaseModel):
     email: Optional[str]
     fullName: str
-    phone: Optional[PhoneInfo] = Field(alias='number')
+    phone: str #Field(alias='number')
 
-    class Config:
-        allow_population_by_field_name = True
+    @validator('phone')
+    def check_number(cls, v):
+        try:
+            if len(v) == 11 and all([i in '0123456789' for i in v]) :
+                return v
+        except ValidationError as e:
+            print(e)
+
+    # class Config:
+    #     allow_population_by_field_name = True

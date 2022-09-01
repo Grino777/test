@@ -1,8 +1,8 @@
 from typing import Optional
-
-from pydantic import BaseModel
+from classes.adressinfo import AdressInfo
+from pydantic import BaseModel, validator
 
 
 class CoordinatesInfo(BaseModel):
-    latitude: Optional[str]
-    longitude: Optional[str]
+    latitude: Optional[float]
+    longitude: Optional[float]

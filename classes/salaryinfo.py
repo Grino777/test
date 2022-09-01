@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 
 
 class SalaryInfo(BaseModel):
-    _from: int = Field(alias='from')
+    from_: int = Field(alias='from')
     to: int
-    currency: str
-    gross: bool
+    # currency: str
+    # gross: bool
